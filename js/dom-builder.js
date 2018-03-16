@@ -26,3 +26,35 @@ function makeDelivery(deliveryList) {
     $(".song-list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
     }
 }
+
+function deliveryForm(delivery, deliveryId) {
+    return new Promise(function (resolve, reject) {
+        let deliveryItem = {
+          customer: delivery ? delivery.customer : "",
+          emInt: delivery ? delivery.emInt : "",
+          number: delivery ? delivery.number : "",
+          address: delivery ? delivery.address : "",
+          date: delivery ? delivery.date : "",
+          time: delivery ? delivery.time : "",
+          items: delivery ? delivery.items : "",
+          formTitle: delivery ? `Edit "${delivery.customer}"` : "Add new delivery",
+          btnText: delivery ? "save changes" : "save delivery",
+          btnId: delivery ? "save_edit_btn" : "save_new_btn"
+        },
+        form = 
+        `<h3>${deliveryItem.formTitle}<h3>
+        <input type="text" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input>
+        <input type="text" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input>
+        <input type="text" id="form--number" placeholder="number" value="${deliveryItem.number}"></input>
+        <input type="text" id="form--address" placeholder="address" value="${deliveryItem.address}"></input>
+        <input type="date" id="form--date" placeholder="date" value="${deliveryItem.date}"></input>
+        <input type="text" id="form--time" placeholder="time" value="${deliveryItem.time}"></input>
+        <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button>`;
+        resolve(form);
+    });
+}
+
+module.exports = {
+    makeDelivery,
+    deliveryForm
+};
