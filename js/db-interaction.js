@@ -4,6 +4,9 @@ let $ = require('jquery'),
     firebase = require("./fb-config"),
     provider = new firebase.auth.GoogleAuthProvider();
 
+//////////////// FIREBASE INTERACTIONS ////////////
+
+
 function getFBDetails(user){
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}//user.json?orderBy="uid"&equalTo="${user}"`
@@ -35,7 +38,10 @@ function updateUserFB(userObj){
         return userID;
     });
 }
+//////////////////////////////////////////////////////////////
 
+
+////////////////  GETTING AND SETTING DATA TO DB  ///////////////////
 // function createUser(userObj) {
 //     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
 //         .catch(function(error) {
