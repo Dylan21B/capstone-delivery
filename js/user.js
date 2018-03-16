@@ -34,13 +34,3 @@ function getUser() {
 
 module.exports = {logInGoogle, logOut, setUser, getUser};
 
-
-
-
-
-
-
-
-module.exports = {
-
-};
