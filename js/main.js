@@ -18,5 +18,13 @@ $("#login").click(function(){
       login.setUser(result.user.uid);
       $("#login").addClass("is-hidden");
       $("#logout").removeClass("is-hidden");
+      console.log("User", result.user.displayName);
     });
+  });
+
+  $("#logout").click(function(){
+    console.log("logout clicked");
+    login.logOut();
+    $('#login').removeClass("is-hidden");
+    $('#logout').addClass("is-hidden");
   });
