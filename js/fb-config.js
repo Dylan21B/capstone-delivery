@@ -12,7 +12,7 @@ require("firebase/database");
         databaseURL: fbData.databaseURL
       };
      
-      firebase.getFBsettings = () => {
+      firebase.getFBsettings = function(){
         console.log("getFBsettings", config);
         return config;
 };
