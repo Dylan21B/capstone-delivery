@@ -42,6 +42,54 @@ function updateUserFB(userObj){
 
 
 ////////////////  GETTING AND SETTING DATA TO DB  ///////////////////
+
+function getDeliveries(user) {
+    return $.ajax({
+        url:`${firebase.getFBsettings().databaseURL}/deliveries.json?orderBy="uid"&equalTo="${user}"`
+    }).done((deliveryData) => {
+        return deliveryData;
+    });
+}
+
+function addDelivery(deliveryFormObj) {
+    return $.ajax({
+        url:`${firebase.getFBsettings().databaseURL}/deliveries.json`,
+        type: 'POST',
+        data: JSON.stringify(deliveryFormObj),
+        dataType: 'json'
+    }).done((deliveryId) =>{
+        return deliveryId;
+    });
+}
+
+function deleteDelivery(deliveryId) {
+    return $.ajax( {
+        url:`${firebase.getFBsettings().databaseURL}/deliveries/${deliveryId}.json`,
+        method: "DELETE"
+    }).done((data) => {
+        return data;
+    });
+}
+
+function getDelivery(deliveryId) {
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/deliveries/${deliveryId}`
+    }).done((deliveryData) => {
+        return deliveryData;
+    }).fail((error) => {
+        return error;
+    });
+}
+
+function editDelivery(deliveryFormObj, deliveryId) {
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/deliveries/${deliveryId}.json`,
+        type: 'PUT',
+        data: JSON.stringify(deliveryFormObj)
+    }).done((data) => {
+        return data;
+    });
+}
 // function createUser(userObj) {
 //     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
 //         .catch(function(error) {
@@ -62,5 +110,10 @@ function updateUserFB(userObj){
 
 module.exports= { getFBDetails,
     updateUserFB,
-    addUserFB
+    addUserFB,
+    getDeliveries,
+    addDelivery,
+    getDelivery,
+    editDelivery,
+    deleteDelivery
 };

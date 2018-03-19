@@ -2,6 +2,10 @@
 
 let $ = require('jquery');
 
+///////////////********************************************************************** *//////////////////
+
+/////////////   DOM-BUILDER.JS CREATES THE PRINT FUNCTION AND POPULATES FORM ////////////////////////////////
+
 function makeDelivery(deliveryList) {
     let $deliveryDisplay =
     $(`<div class="uiContainer__delivery-list box col s12">
