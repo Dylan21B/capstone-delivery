@@ -33,6 +33,7 @@ $(document).on("click", ".save_new_btn", function() {
 
 /// get delivery from firebase and then populate the form for editing
 $(document).on("click", ".edit-btn", function () {
+    console.log("pressed the edit buton");
     let deliveryID = $(this).data("edit-id");
     db.getDelivery(deliveryID)
     .then((delivery) => {
@@ -43,7 +44,7 @@ $(document).on("click", ".edit-btn", function () {
 });
 
 //Save edited deliveries to firebase then reload Dom with updated data
-$(document).on("click", ".save_edit-btn", function () {
+$(document).on("click", ".save-edit-btn", function () {
     let deliveryObj = buildDeliveryObj(),
     deliveryID = $(this).attr("id");
     console.log("deliveryID", deliveryID);

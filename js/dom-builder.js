@@ -15,19 +15,19 @@ function makeDelivery(deliveryList) {
     $(".uiContainer--wrapper").html($deliveryDisplay);
     for (let delivery in deliveryList) {
         let currentDelivery = deliveryList[delivery],
-        deliveryListItem = $("<li>", {class: "delivery-list__item"}),
+        deliveryListItem = $("<ul>", {class: "delivery-list__item"}),
         customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
         deliveryListData = $("<ul/>", {class: "delivery-list__item--data"}),
-        deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit-btn waves-effect waves-light btn", text: "edit"}),
-        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn waves-effect waves-light btn", text: "delete" });
+        deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit-btn btn-light btn-sm", text: "Edit"}),
+        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn btn-danger btn-sm", text: "Delete" });
 
     deliveryListData.append(
-        `<li>${currentDelivery.name}</li>
-        <li>${currentDelivery.phone}</li>
+        `<li>${currentDelivery.date}</li>
+        <li>${currentDelivery.number}</li>
         <li>${currentDelivery.address}</li>`);
 
     $(".delivery-list").append(deliveryListItem.append(customer));
-    $(".song-list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
+    $(".delivery-list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
     }
 }
 

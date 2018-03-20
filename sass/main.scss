@@ -26,6 +26,19 @@
 .is-hidden{
     display: none;
 }
+.delivery-list__item{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    max-width: 25%;
+    padding: 5px;
+    margin: 5px;
+}
+
+.delivery-list__item, .edit-btn{
+    color: black;
+}
+
 /*# sourceMappingURL=main.scss.map */
 
 /*# sourceMappingURL=main.scss.map */
