@@ -39,7 +39,7 @@ $(document).on("click", ".edit-btn", function () {
     .then((delivery) => {
         return templates.deliveryForm(delivery, deliveryID);
     }).then((finishedForm) => {
-      $(".uiContainer--wrapper").html(finishedForm);
+      $(".uiContainer---wrapper").html(finishedForm);
       console.log("edit button worked");
     });
 });
@@ -85,7 +85,7 @@ $("#add-delivery").click(function() {
     console.log("clicked for new delivery");
     var documentForm = templates.deliveryForm()
     .then(function(deliveryForm) {
-        $(".uiContainer--wrapper").html(deliveryForm);
+        $(".uiContainer---wrapper").html(deliveryForm);
     });
 });
 

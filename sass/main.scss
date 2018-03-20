@@ -34,6 +34,7 @@
     padding: 5px;
     margin: 5px;
     text-align: center;
+    display: inline-block;
 }
 
 .delivery-list__item, .edit-btn{
@@ -44,6 +45,12 @@
 }
 #form--items{
     float: right;
+}
+#formRight{
+    float: right;
+}
+#formLeft{
+    float: left;
 }
 
 /*# sourceMappingURL=main.scss.map */
