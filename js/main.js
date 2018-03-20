@@ -40,6 +40,7 @@ $(document).on("click", ".edit-btn", function () {
         return templates.deliveryForm(delivery, deliveryID);
     }).then((finishedForm) => {
       $(".uiContainer--wrapper").html(finishedForm);
+      console.log("edit button worked");
     });
 });
 
