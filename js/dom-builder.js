@@ -15,19 +15,19 @@ function makeDelivery(deliveryList) {
     $(".uiContainer--wrapper").html($deliveryDisplay);
     for (let delivery in deliveryList) {
         let currentDelivery = deliveryList[delivery],
-        deliveryListItem = $("<li>", {class: "delivery-list__item"}),
+        deliveryListItem = $("<ul>", {class: "delivery-list__item"}),
         customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
         deliveryListData = $("<ul/>", {class: "delivery-list__item--data"}),
-        deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit-btn waves-effect waves-light btn", text: "edit"}),
-        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn waves-effect waves-light btn", text: "delete" });
+        deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit-btn btn-light btn-sm", text: "Edit"}),
+        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn btn-danger btn-sm", text: "Delete" });
 
     deliveryListData.append(
-        `<li>${currentDelivery.name}</li>
-        <li>${currentDelivery.phone}</li>
+        `<li>${currentDelivery.date}</li>
+        <li>${currentDelivery.number}</li>
         <li>${currentDelivery.address}</li>`);
 
     $(".delivery-list").append(deliveryListItem.append(customer));
-    $(".song-list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
+    $(".delivery-list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
     }
 }
 
@@ -47,13 +47,16 @@ function deliveryForm(delivery, deliveryId) {
         },
         form = 
         `<h3>${deliveryItem.formTitle}<h3>
-        <input type="text" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input>
-        <input type="text" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input>
-        <input type="text" id="form--number" placeholder="number" value="${deliveryItem.number}"></input>
-        <input type="text" id="form--address" placeholder="address" value="${deliveryItem.address}"></input>
-        <input type="date" id="form--date" placeholder="date" value="${deliveryItem.date}"></input>
-        <input type="text" id="form--time" placeholder="time" value="${deliveryItem.time}"></input>
-        <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button>`;
+        <div class="form-group col-lg-6" id="formLeft">
+        <input type="text" class="form-control" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input><br>
+        <input type="text" class="form-control" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input><br>
+        <input type="text" class="form-control" id="form--number" placeholder="number" value="${deliveryItem.number}"></input><br>
+        <input type="text" class="form-control" id="form--address" placeholder="address" value="${deliveryItem.address}"></input><br>
+        <input type="date" class="form-control" id="form--date" placeholder="date" value="${deliveryItem.date}"></input><br>
+        <input type="text" class="form-control" id="form--time" placeholder="time" value="${deliveryItem.time}"></input></div>
+        <div class="form-group col-lg-6" id="formRight">
+        <input id="form--items" class="form-control" placeholder="items" value="${deliveryItem.items}"></input><br>
+        <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button></div>`;
         resolve(form);
     });
 }

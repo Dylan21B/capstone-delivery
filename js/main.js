@@ -33,17 +33,20 @@ $(document).on("click", ".save_new_btn", function() {
 
 /// get delivery from firebase and then populate the form for editing
 $(document).on("click", ".edit-btn", function () {
+    console.log("pressed the edit buton");
     let deliveryID = $(this).data("edit-id");
     db.getDelivery(deliveryID)
     .then((delivery) => {
         return templates.deliveryForm(delivery, deliveryID);
     }).then((finishedForm) => {
-      $(".uiContainer--wrapper").html(finishedForm);
+      $(".uiContainer---wrapper").html(finishedForm);
+      console.log("edit button worked");
     });
 });
 
 //Save edited deliveries to firebase then reload Dom with updated data
-$(document).on("click", ".save_edit-btn", function () {
+$(document).on("click", ".save_edit_btn", function () {
+    console.log("pressed save edit");
     let deliveryObj = buildDeliveryObj(),
     deliveryID = $(this).attr("id");
     console.log("deliveryID", deliveryID);
@@ -82,7 +85,7 @@ $("#add-delivery").click(function() {
     console.log("clicked for new delivery");
     var documentForm = templates.deliveryForm()
     .then(function(deliveryForm) {
-        $(".uiContainer--wrapper").html(deliveryForm);
+        $(".uiContainer---wrapper").html(deliveryForm);
     });
 });
 

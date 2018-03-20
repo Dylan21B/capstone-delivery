@@ -72,8 +72,9 @@ function deleteDelivery(deliveryId) {
 }
 
 function getDelivery(deliveryId) {
+    console.log("here is the problem");
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/deliveries/${deliveryId}`
+        url: `https://capstone-delivery-data.firebaseio.com/deliveries/${deliveryId}.json`
     }).done((deliveryData) => {
         return deliveryData;
     }).fail((error) => {
@@ -83,7 +84,7 @@ function getDelivery(deliveryId) {
 
 function editDelivery(deliveryFormObj, deliveryId) {
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/deliveries/${deliveryId}.json`,
+        url: `https://capstone-delivery-data.firebaseio.com/deliveries/${deliveryId}.json`,
         type: 'PUT',
         data: JSON.stringify(deliveryFormObj)
     }).done((data) => {

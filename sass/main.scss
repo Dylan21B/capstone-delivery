@@ -26,6 +26,36 @@
 .is-hidden{
     display: none;
 }
+.delivery-list__item{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    max-width: 25%;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.delivery-list__item, .edit-btn{
+    color: black;
+}
+#form--emInt{
+    float: right;
+}
+#form--items{
+    float: right;
+}
+#formRight{
+    float: right;
+}
+#formLeft{
+    float: left;
+}
+#printDelivery{
+    overflow: scroll;
+}
+
 /*# sourceMappingURL=main.scss.map */
 
 /*# sourceMappingURL=main.scss.map */
