@@ -77,6 +77,15 @@ function buildDeliveryObj() {
     return deliveryObj;
 }
 
+
+$("#add-delivery").click(function() {
+    console.log("clicked for new delivery");
+    var documentForm = templates.deliveryForm()
+    .then(function(deliveryForm) {
+        $(".uiContainer--wrapper").html(deliveryForm);
+    });
+});
+
 $("#login").click(function(){
     console.log("clicked on Signin");
     login.logInGoogle()
