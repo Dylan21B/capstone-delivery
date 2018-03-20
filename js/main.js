@@ -45,7 +45,8 @@ $(document).on("click", ".edit-btn", function () {
 });
 
 //Save edited deliveries to firebase then reload Dom with updated data
-$(document).on("click", ".save-edit-btn", function () {
+$(document).on("click", ".save_edit_btn", function () {
+    console.log("pressed save edit");
     let deliveryObj = buildDeliveryObj(),
     deliveryID = $(this).attr("id");
     console.log("deliveryID", deliveryID);

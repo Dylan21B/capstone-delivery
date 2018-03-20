@@ -84,7 +84,7 @@ function getDelivery(deliveryId) {
 
 function editDelivery(deliveryFormObj, deliveryId) {
     return $.ajax({
-        url: `https://crossorigin.me/https://capstone-delivery-data.firebaseio.com/deliveries/${deliveryId}.json`,
+        url: `https://capstone-delivery-data.firebaseio.com/deliveries/${deliveryId}.json`,
         type: 'PUT',
         data: JSON.stringify(deliveryFormObj)
     }).done((data) => {
