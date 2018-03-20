@@ -38,11 +38,78 @@
     <div class="container" id="welcome">
         <h1>Welcome, Good Luck!</h1>
     </div>
-   <div class="row">
-       <div class="col-lg-8" id="divBlue"><h2>Welcome to the delivery app</h2></div>
-       <div class="col-lg-4" id="divGreen"><h2>Today's Deliveries:</h2></div>
+   
+   
+   
+    <div class="row">
+ <!-- ///////////////////////info div /////////////////////     -->
+        <div class="col-lg-8" id="divBlue">
+           <nav id="infoDiv">
+            <h2>Welcome to the Delivery App</h2>
+           </nav>
+        <p>
+            <b>Welcome,</b><br>
+            This application will help your store's delivery records be as accecable and as organized as possible.
+            To start, got to the New Delivery page and fill out the info for your delivery sale. Be sure to record any customer 
+            requests in the notes section. Once completed, you can view all current deliveries from the current deliveries page.
+            There you can edit and delete any deliveries as needed. Stay allert and aware so the mice wont eat you.  
+        </p>
+
+        <div class="container">
+                <h2>This Weeks Deliveries</h2>
+                <p>Click on a delivery in order to see the details below.</p>            
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Monday</th>
+                      <th>Tuesday</th>
+                      <th>Wednsday</th>
+                      <th>Thursday</th>
+                      <th>Friday</th>
+                      <th>Saturday</th>
+                      <th>Sunday</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>Arnold Palmer</td>
+                      <td> </td>
+                      <td> </td>
+                      <td>John Smith</td>
+                      <td></td>
+                      <td>Betty Boop</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+
+     <div class="col-lg-4" id="divGreen">
+        <nav id="todayDiv">
+           <h2>Today's Deliveries:</h2>
+           <div class="uiContainer__delivery-list box col s12">
+                <ul class="delivery-list">
+                </ul>
+                </div>
+        </nav>
+     </div>
    </div>
-   <section class="uiContainer--wrapper col s9">
+   
+
+        <div class="jumbotron jumbotron-fluid" id="deliveryJumbo">
+                <div class="container">
+                  <h1>Create a New Delivery</h1>  
+                  <button type="button" class="btn btn-danger" id="add-delivery">New Delivery</button>    
+                  <p>Click below to create a new delivery. Don't worry if you mess up, you can edit the delivery later!</p>
+                </div>
+              </div>
+
+        
+  
+   
+   <div class="uiContainer--wrapper col 12" id="newDeliveryForm"></div> 
 
    
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
