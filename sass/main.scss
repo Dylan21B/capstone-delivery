@@ -33,12 +33,16 @@
     max-width: 25%;
     padding: 5px;
     margin: 5px;
+    text-align: center;
 }
 
 .delivery-list__item, .edit-btn{
     color: black;
 }
 #form--emInt{
+    float: right;
+}
+#form--items{
     float: right;
 }
 

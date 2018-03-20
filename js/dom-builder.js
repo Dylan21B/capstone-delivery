@@ -47,12 +47,13 @@ function deliveryForm(delivery, deliveryId) {
         },
         form = 
         `<h3>${deliveryItem.formTitle}<h3>
-        <input type="text" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input>
-        <input type="text" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input><br>
+        <input type="text" class="form-group" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input>
+        <input type="text" class="form-group" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input><br>
         <input type="text" id="form--number" placeholder="number" value="${deliveryItem.number}"></input><br>
         <input type="text" id="form--address" placeholder="address" value="${deliveryItem.address}"></input><br>
-        <input type="date" id="form--date" placeholder="date" value="${deliveryItem.date}"></input>
+        <input type="date" id="form--date" placeholder="date" value="${deliveryItem.date}"></input><br>
         <input type="text" id="form--time" placeholder="time" value="${deliveryItem.time}"></input>
+        <textarea id="form--items" placeholder="items" value="${deliveryItem.items}"></textarea>
         <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button>`;
         resolve(form);
     });
