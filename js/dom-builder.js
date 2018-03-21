@@ -6,6 +6,10 @@ let $ = require('jquery');
 
 /////////////   DOM-BUILDER.JS CREATES THE PRINT FUNCTION AND POPULATES FORM ////////////////////////////////
 
+
+
+
+////// loads list number 2 ////////////////////////////////////////////////
 function makeDeliveryBig(deliveryList) {
     let $deliveryDisplay =
     $(`<div class="uiContainer__delivery--list box col s12">
@@ -29,6 +33,8 @@ function makeDeliveryBig(deliveryList) {
         <li>${currentDelivery.items}</li>
         <li>${currentDelivery.emInt}</li>`);
 
+
+        //// location printed to
     $(".delivery--list").append(deliveryListItem.append(customer));
     $(".delivery--list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
     }
@@ -36,7 +42,7 @@ function makeDeliveryBig(deliveryList) {
 
 
 
-////// loads list nuber 2 /////
+////// loads list nuber 2 //////////////////////////////////////////////////
 function makeDelivery(deliveryList) {
     let $deliveryDisplay =
     $(`<div class="uiContainer__delivery-list box col s12">
@@ -65,7 +71,7 @@ function makeDelivery(deliveryList) {
 
 
 
-////  Template for the delivery forum  ////
+////  Template for the delivery forum  //////////////////////////////////////////
 function deliveryForm(delivery, deliveryId) {
     return new Promise(function (resolve, reject) {
         let deliveryItem = {
