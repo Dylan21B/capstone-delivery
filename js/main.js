@@ -10,7 +10,7 @@ let time = require('./time.js'),
 
 time.displayMoment();
 
-// Using firebase
+// Using firebase // Loads list number 2
 function loadDeliveriesToDOM() {
     console.log("get those deliveries");
     let currentUser = login.getUser();
@@ -18,6 +18,28 @@ function loadDeliveriesToDOM() {
     .then((deliveryData) => {
       console.log("here are the deliveries", deliveryData);
       templates.makeDelivery(deliveryData);
+    });
+}
+
+// Click to show large details below
+$(document).on("click", ".big-btn", function() {
+    console.log("you clicked info button");
+    let currentDelivery = $(this).data("big-id");
+    db.getDelivery(currentDelivery)
+    .then((deliveryId) => {
+        console.log("here is a single delivery", deliveryId);
+        loadDeliveriesDetails(deliveryId);
+    });
+});
+
+/// Using firebase // Loads list number 3 the big one
+function loadDeliveriesDetails(deliveryId) {
+    console.log("get the big deliveries");
+    let currentUser = login.getUser();
+    db.getDelivery(currentUser)
+    .then((deliveryId) => {
+        console.log("big delivery", deliveryId);
+        templates.makeDeliveryBig(deliveryId);
     });
 }
 
@@ -30,6 +52,7 @@ $(document).on("click", ".save_new_btn", function() {
         loadDeliveriesToDOM();
     });
 });
+
 
 /// get delivery from firebase and then populate the form for editing
 $(document).on("click", ".edit-btn", function () {
