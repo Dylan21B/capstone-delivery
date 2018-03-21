@@ -29,8 +29,8 @@ function makeDeliveryBig(deliveryList) {
         <li>${currentDelivery.items}</li>
         <li>${currentDelivery.emInt}</li>`);
 
-    $(".delivery-list").append(deliveryListItem.append(customer));
-    $(".delivery-list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
+    $(".delivery--list").append(deliveryListItem.append(customer));
+    $(".delivery--list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
     }
 }
 
