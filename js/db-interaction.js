@@ -4,7 +4,7 @@ let $ = require('jquery'),
     firebase = require("./fb-config"),
     provider = new firebase.auth.GoogleAuthProvider();
 
-//////////////// FIREBASE INTERACTIONS ////////////
+//////////////// FIREBASE USER INTERACTIONS ////////////
 
 
 function getFBDetails(user){
@@ -72,7 +72,7 @@ function deleteDelivery(deliveryId) {
 }
 
 function getDelivery(deliveryId) {
-    console.log("here is the problem");
+    console.log("get single delivery");
     return $.ajax({
         url: `https://capstone-delivery-data.firebaseio.com/deliveries/${deliveryId}.json`
     }).done((deliveryData) => {
