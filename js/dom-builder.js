@@ -70,27 +70,25 @@ function makeDelivery(deliveryList) {
 }
 
 ///// loads list number 1 ///////////////////////////////////////////////////////
-function makeDeliverySmall(deliveryList) {
+function makeDeliverySmall(deliveries) {
     let $deliveryDisplay =
-    $(`<div class="uiContainer__delivery-list box col s12">
-    <ul class="delivery-list">
+    $(`<div class="uiContainer__delivery---list box col s12">
+    <ul class="delivery---list">
     </ul>
     </div>`);
     $(".uiContainer----wrapper").html($deliveryDisplay);
-    for (let delivery in deliveryList) {
-        let currentDelivery = deliveryList[delivery],
-        deliveryListItem = $("<ul>", {class: "delivery-list__item"}),
+    for (let delivery in deliveries) {
+        let currentDelivery = deliveries[delivery],
+        deliveryListItem = $("<ul>", {class: "delivery1-list__item"}),
         customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
         deliveryListData = $("<ul/>", {class: "delivery-list__item--data"}),
         deliveryListBig = $("<a>", {"data-big-id": delivery, class: "big-btn btn-info btn-sm", text: "Info" });
 
     deliveryListData.append(
-        `<li>${currentDelivery.date}</li>
-        <li>${currentDelivery.number}</li>
-        <li>${currentDelivery.address}</li>`);
+        `<li>${currentDelivery.date}</li>`);
 
-    $(".delivery-list").append(deliveryListItem.append(customer));
-    $(".delivery-list").append(deliveryListItem.append(deliveryListData).append(deliveryListBig));
+    $(".delivery---list").append(deliveryListItem.append(customer));
+    $(".delivery---list").append(deliveryListItem.append(deliveryListData).append(deliveryListBig));
     }
 }
 
@@ -128,5 +126,6 @@ function deliveryForm(delivery, deliveryId) {
 module.exports = {
     makeDelivery,
     deliveryForm,
-    makeDeliveryBig
+    makeDeliveryBig,
+    makeDeliverySmall
 };

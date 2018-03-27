@@ -1,6 +1,15 @@
 /*# sourceMappingURL=main.scss.map */
 #welcome {
-  background-color:red; 
+  background-color: whitesmoke;
+  color: red;
+  outline: thin darkgray; 
+  padding: 10px;
+}
+#login{
+    float: right;
+}
+#logOut{
+    float: right;
 }
 #divBlue{
     background-color: whitesmoke;
@@ -44,6 +53,10 @@
 .delivery-list__item, .edit-btn{
     color: black;
 }
+.delivery-list__item, .delete-btn{
+    outline: 2px;
+    outline-color: black;
+}
 #form--emInt{
     float: right;
 }
@@ -60,6 +73,9 @@
     height: 20vh;
     background-color: grey;
     overflow: auto;
+}
+#delivery1-list__item{
+    background-color: whitesmoke;
 }
 
 /*# sourceMappingURL=main.scss.map */

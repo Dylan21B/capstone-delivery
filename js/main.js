@@ -18,6 +18,7 @@ function loadDeliveriesToDOM() {
     .then((deliveryData) => {
       console.log("here are the deliveries", deliveryData);
       templates.makeDelivery(deliveryData);
+      templates.makeDeliverySmall(deliveryData);
     });
 }
 
