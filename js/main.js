@@ -35,9 +35,9 @@ $(document).on("click", ".big-btn", function() {
 
 /// Using firebase // Loads list number 3 the big one
 function loadDeliveriesDetails(deliveryId) {
-    console.log("3 get the big deliveries", deliveryId);
-    let currentUser = login.getUser();
-    db.getDelivery(currentUser)
+    console.log("3 get the big deliveries", deliveryId)
+    // let currentUser = login.getUser();
+    // db.getDelivery(currentUser)
     .then((deliveryId) => {
         console.log("4 big delivery", deliveryId);
         templates.makeDeliveryBig(deliveryId);
