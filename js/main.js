@@ -18,28 +18,30 @@ function loadDeliveriesToDOM() {
     .then((deliveryData) => {
       console.log("here are the deliveries", deliveryData);
       templates.makeDelivery(deliveryData);
+      templates.makeDeliverySmall(deliveryData);
     });
 }
 
 // Click to show large details below
 $(document).on("click", ".big-btn", function() {
-    console.log("you clicked info button");
+    console.log("1 you clicked info button");
     let currentDelivery = $(this).data("big-id");
     db.getDelivery(currentDelivery)
     .then((deliveryId) => {
-        console.log("here is a single delivery", deliveryId);
+        console.log("2 here is a single delivery", deliveryId);
         loadDeliveriesDetails(deliveryId);
     });
 });
 
 /// Using firebase // Loads list number 3 the big one
 function loadDeliveriesDetails(deliveryId) {
-    console.log("get the big deliveries");
-    let currentUser = login.getUser();
-    db.getDelivery(currentUser)
+    console.log("3 get the big deliveries", deliveryId)
+    // let currentUser = login.getUser();
+    // db.getDelivery(currentUser)
     .then((deliveryId) => {
-        console.log("big delivery", deliveryId);
+        console.log("4 big delivery", deliveryId);
         templates.makeDeliveryBig(deliveryId);
+        console.log("5 here is the delivery now", deliveryId);
     });
 }
 
