@@ -46,9 +46,10 @@ body{
 }
 #infoDiv {
     background-color: $colorA;
-    color: $black;
+    color: $colorD;
     padding: 10px;
     border-radius: 10px;
+
 }
 #divGreen{
     background-color: $colorB;
@@ -79,9 +80,9 @@ body{
     box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
 }
 .delivery-list__item--data, li{
-    color: whitesmoke;
+    color: $colorD;
 }
-.delivery--list__item{
+.delivery--list__item--data, li{
     color: $black;
 }
 .todayDelivery1-list__item{
@@ -110,6 +111,9 @@ background-color: $colorD;
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
 }
 .customer-name{
     text-align: center;
@@ -142,7 +146,7 @@ background-color: $colorD;
 }
 #logoPic{
     height:250px;
-    width:250px;
+    width:300px;
 }
 #logoPicNew{
     height:300px;
