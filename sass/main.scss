@@ -1,54 +1,92 @@
 /*# sourceMappingURL=main.scss.map */
+
+$colorA: rgb(218, 20, 20);
+$colorB: rgb(190, 194, 196);
+$colorC: rgb(134, 134, 134);
+$colorD: rgb(255, 255, 255);
+$colorE: #f8dbc8;
+$colorF: whitesmoke;
+$black: black;
+
+body{
+    background: $colorF;
+}
 #welcome {
-  background-color: whitesmoke;
-  color: red;
-  outline: thin darkgray; 
+  background-color: $colorF;
+  color: $colorA;
+  outline: thin $colorC; 
   padding: 10px;
 }
 #login{
+    background: $colorD;
+    font-size: 1em;
+    padding: 0 15px 0 10px;
+    cursor: pointer;
     float: right;
 }
 #logOut{
     float: right;
+    background: $colorD;
+    font-size: 1em;
+    padding: 0 15px 0 10px;
+    cursor: pointer;
 }
 #divBlue{
-    background-color: whitesmoke;
-    height: 480px;
+    background-color: $colorF;
+    height: 680px;
     color: #333333;
     // padding: 15px;
 }
+#form--items{
+    height: 200px;
+    text-align: initial;    
+}
 #infoDiv {
-    background-color: red;
-    color: black;
+    background-color: $colorA;
+    color: $black;
     padding: 10px;
 }
 #divGreen{
-    background-color: rgba(151, 146, 148, 0.7);
+    background-color: $colorB;
     height: 480px;
 }
 #todayDiv{
-    background-color: red;
+    background-color: $colorA;
 
 }
 #displayMoment{
-    color: white;
+    color: $colorD;
 }
 .is-hidden{
     display: none;
 }
 .delivery-list__item{
-    background-color: red;
-    color: white;
+    background-color: $colorA;
+    text-decoration-color: $colorD;
+    font-size: 1.2em;
     border-radius: 10px;
     max-width: 25%;
-    padding: 5px;
-    margin: 5px;
+    padding: 10px;
+    margin: 10px;
     display: inline-block;
     text-align: left;
+    -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
+}
+.delivery-list__item--data, li{
+    color: whitesmoke;
+}
+.todayDelivery1-list__item{
+background-color: $colorD;
+}
+#smalldelivery{
+    background-color: $colorD;
 }
 .customer-name{
     text-align: center;
     text-decoration: underline;
+    color: $colorD;
 }
 .delivery-list__item, .edit-btn{
     color: black;
@@ -70,13 +108,15 @@
     float: left;
 }
 #printDelivery{
-    height: 20vh;
-    background-color: grey;
+    height: 40vh;
+    background-color: $colorC;
     overflow: auto;
 }
-#delivery1-list__item{
-    background-color: whitesmoke;
+#logoPic{
+    height:200px;
+    width:200px;
 }
+
 
 /*# sourceMappingURL=main.scss.map */
 

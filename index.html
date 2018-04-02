@@ -12,7 +12,8 @@
 <body>
 
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <a class="navbar-brand" href="#">Super Delivery App Pro</a>
+              
+                <a class="navbar-brand" href="#">Delivery App Pro</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,15 +34,18 @@
               </nav>
 
 
-    <div class="container-fluid" id="welcome">
+    <div class="jumbotron jumbotron-fluid" id="welcome">
+            <img src="pics/SVG/Artboard1.svg" alt="logo" id="logoPic">
+
         <h2>Welcome, Get Started Below!</h2>
+
     </div>
    
    
    
     <div class="row">
  <!-- ///////////////////////info div /////////////////////     -->
-        <div class="col-lg-8" id="divBlue">
+        <div class="col-lg-12" id="divBlue">
            <nav id="infoDiv">
             <h2>How to use Super Delivery App Pro:</h2>
            </nav>
@@ -61,12 +65,7 @@
         </div>
 
 
-     <div class="col-lg-4" id="divGreen">
-        <nav id="todayDiv">
-           <h2>Today's Deliveries:</h2>
-        
-           <div class="uiContainer----wrapper col 12" id="smallDelivery"></div>
-                </div>
+    
         </nav>
      </div>
    </div>
@@ -75,12 +74,16 @@
         <div class="jumbotron jumbotron-fluid" id="deliveryJumbo">
                 <div class="container">
                   <h1>Create a New Delivery</h1>  
-                  <button type="button" class="btn btn-danger" id="add-delivery">New Delivery</button>    
+                 <a href="#newFormJump"> <button type="button" class="btn btn-danger" id="add-delivery">New Delivery</button> </a>
                   <p>Click below to create a new delivery. Don't worry if you mess up, you can edit the delivery later!</p>
                 </div>
               </div>
 
               <div class="uiContainer---wrapper col 12" id="newDeliveryForm"></div> 
+
+<footer class="footer" id="footerDiv">
+        <div id="displayMoment"></div>
+</footer>
 
   
    

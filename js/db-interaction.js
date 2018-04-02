@@ -74,8 +74,10 @@ function deleteDelivery(deliveryId) {
 function getDelivery(deliveryId) {
     console.log("get single delivery");
     return $.ajax({
-        url: `https://capstone-delivery-data.firebaseio.com/deliveries/${deliveryId}.json`
+        url: `${firebase.getFBsettings().databaseURL}/deliveries/${deliveryId}.json`,
+        type: 'GET'
     }).done((deliveryData) => {
+        console.log("get single delivery123", deliveryData);
         return deliveryData;
     }).fail((error) => {
         return error;
