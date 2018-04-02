@@ -39,10 +39,10 @@ function loadDeliveriesDetails(deliveryId) {
     console.log("3 get the big deliveries", deliveryId);
     // let currentUser = login.getUser();
     db.getDelivery(deliveryId)
-    .then((deliveryId) => {
-        console.log("4 big delivery", deliveryId);
-        templates.makeDeliveryBig(deliveryId);
-        console.log("5 here is the delivery now", deliveryId);
+    .then((deliveryObj) => {
+        console.log("4 big delivery", deliveryObj);
+        templates.makeDeliveryBig(deliveryObj, deliveryId);
+        console.log("5 here is the delivery now", deliveryObj);
     });
 }
 
