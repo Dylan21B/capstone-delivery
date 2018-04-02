@@ -10,34 +10,35 @@ let $ = require('jquery');
 
 
 ////// loads list number 3 ////////////////////////////////////////////////
-function makeDeliveryBig(deliveryList) {
+function makeDeliveryBig(deliveryList, id) {
+    console.log("here is begining of big template",deliveryList);
     let $deliveryDisplay =
     $(`<div class="uiContainer__delivery--list box col s12">
     <ul class="delivery--list">
     </ul>
     </div>`);
     $(".uiContainer---wrapper").html($deliveryDisplay);
-    for (let delivery in deliveryList) {
-        let currentDelivery = deliveryList[delivery],
-        deliveryListItem = $("<ul>", {class: "delivery--list__item"}),
-        customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
+    // for (let delivery in deliveryList) {
+    //     let currentDelivery = deliveryList[delivery],
+    let deliveryListItem = $("<ul>", {class: "delivery--list__item"}),
+        customer = $("<span/>", {class: "customer-name"}).text(deliveryList.customer),
         deliveryListData = $("<ul/>", {class: "delivery--list__item--data"}),
-        deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit--btn btn-light btn-sm", text: "Edit"}),
-        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete--btn btn-outline-dark btn-sm", text: "Delete" });
+        deliveryListEdit = $("<a>", {"data-edit-id": id, class: "edit--btn btn-light btn-sm", text: "Edit"}),
+        deliveryListDelete = $("<a>", {"data-delete-id": id, class: "delete--btn btn-outline-dark btn-sm", text: "Delete" });
 
     deliveryListData.append(
-        `<li>${currentDelivery.date}</li>
-        <li>${currentDelivery.time}</li>
-        <li>${currentDelivery.number}</li>
-        <li>${currentDelivery.address}</li>
-        <li>${currentDelivery.items}</li>
-        <li>${currentDelivery.emInt}</li>`);
+        `<li>${deliveryList.date}</li>
+        <li>${deliveryList.time}</li>
+        <li>${deliveryList.number}</li>
+        <li>${deliveryList.address}</li>
+        <li>${deliveryList.items}</li>
+        <li>${deliveryList.emInt}</li>`);
 
 
         //// location printed to
     $(".delivery--list").append(deliveryListItem.append(customer));
     $(".delivery--list").append(deliveryListItem.append(deliveryListData).append(deliveryListDelete).append(deliveryListEdit));
-    }
+    // }
 }
 
 
@@ -53,11 +54,11 @@ function makeDelivery(deliveryList) {
     for (let delivery in deliveryList) {
         let currentDelivery = deliveryList[delivery],
         deliveryListItem = $("<ul>", {class: "delivery-list__item"}),
-        customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
+        customer = $("<nav/>", {class: "customer-name", id: "cardNav"}).text(currentDelivery.customer),
         deliveryListData = $("<ul/>", {class: "delivery-list__item--data"}),
         deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit-btn btn-light btn-sm", text: "Edit"}),
-        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn btn-outline-dark btn-sm", text: "Delete" }),
-        deliveryListBig = $("<a>", {"data-big-id": delivery, class: "big-btn btn-info btn-sm", text: "Info" });
+        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn btn-secondary btn-sm", text: "Delete" }),
+        deliveryListBig = $("<a>", {"data-big-id": delivery, class: "big-btn btn-secondary btn-sm", text: "Info" });
 
     deliveryListData.append(
         `<li>${currentDelivery.date}</li>

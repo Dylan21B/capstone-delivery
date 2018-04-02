@@ -27,20 +27,22 @@ $(document).on("click", ".big-btn", function() {
     let currentDelivery = $(this).data("big-id");
     db.getDelivery(currentDelivery)
     .then((deliveryId) => {
-        console.log("2 here is a single delivery", deliveryId);
-        loadDeliveriesDetails(deliveryId);
+        console.log("2 here is a single delivery", deliveryId, currentDelivery);
+        // templates.makeDeliveryBig(deliveryId);
+        // console.log("delivery is rendered", deliveryId);
+        loadDeliveriesDetails(currentDelivery);
     });
 });
 
 /// Using firebase // Loads list number 3 the big one
 function loadDeliveriesDetails(deliveryId) {
     console.log("3 get the big deliveries", deliveryId);
-    let currentUser = login.getUser();
-    db.getDelivery(currentUser)
-    .then((deliveryId) => {
-        console.log("4 big delivery", deliveryId);
-        templates.makeDeliveryBig(deliveryId);
-        console.log("5 here is the delivery now", deliveryId);
+    // let currentUser = login.getUser();
+    db.getDelivery(deliveryId)
+    .then((deliveryObj) => {
+        console.log("4 big delivery", deliveryObj);
+        templates.makeDeliveryBig(deliveryObj, deliveryId);
+        console.log("5 here is the delivery now", deliveryObj);
     });
 }
 

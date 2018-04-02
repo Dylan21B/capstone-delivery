@@ -24,40 +24,49 @@
                     </li>
                     
                     <li class="nav-item">
-                      <a class="nav-link" href="#">New Deliveries</a>
+                      <a class="nav-link" href="#jumpHere">New Deliveries</a>
                     </li>
                    </ul>
-                  <div id="displayMoment"></div>
-                  <button id="login">LogIn</button>
+                  <!-- <div id="displayMoment"></div> -->
+                  <button id="login" class="float-right">LogIn</button>
                   <button id="logout" class="is-hidden">LogOut</button>
                 </div>
               </nav>
 
-
-    <div class="jumbotron jumbotron-fluid" id="welcome">
+<div class="row">
+    <div class="col-lg-5" id="welcome">
+        <div class="container">
             <img src="pics/SVG/Artboard1.svg" alt="logo" id="logoPic">
 
         <h2>Welcome, Get Started Below!</h2>
-
     </div>
+    </div>
+        
+    <div class="col-lg-6" id="divRight">
+        <div id="infoDiv">
+                <h2>How to use Delivery App Pro:</h2>
+               </div>
+            <p class="helloDiv">
+                <b>Hello,</b><br>
+                This application will help your store's delivery records be as accecable and as organized as possible.
+                To start, got to the New Delivery page and fill out the info for your delivery sale. 
+            </p>
+
+</div>
+</div>
+<br>
    
    
    
     <div class="row">
  <!-- ///////////////////////info div /////////////////////     -->
         <div class="col-lg-12" id="divBlue">
-           <nav id="infoDiv">
-            <h2>How to use Super Delivery App Pro:</h2>
-           </nav>
-        <p>
-            <b>Hello,</b><br>
-            This application will help your store's delivery records be as accecable and as organized as possible.
-            To start, got to the New Delivery page and fill out the info for your delivery sale. 
-        </p>
 
         <div class="container">
-                <h2>Current Deliveries</h2>
+            <nav id="getStarted">
+                <h1>Current Deliveries</h1>
                 <p>Click on a delivery in order to see the details below.</p>            
+            </nav>
                <div id="printDelivery">
                  <div class="uiContainer--wrapper col 12" id="newDeliveryForm"></div> 
                </div>   
@@ -72,14 +81,18 @@
 </div>
 
         <div class="jumbotron jumbotron-fluid" id="deliveryJumbo">
-                <div class="container">
+            <img src="pics/SVG/ADDDelivery.svg" alt="logoNew" id="logoPicNew" class="float-right">
+                <div class="container" id="jumpHere">
                   <h1>Create a New Delivery</h1>  
                  <a href="#newFormJump"> <button type="button" class="btn btn-danger" id="add-delivery">New Delivery</button> </a>
-                  <p>Click below to create a new delivery. Don't worry if you mess up, you can edit the delivery later!</p>
+                  <p>Click above to create a new delivery. Don't worry if you mess up, you can edit the delivery later!</p>
+                  
                 </div>
               </div>
-
-              <div class="uiContainer---wrapper col 12" id="newDeliveryForm"></div> 
+<div>
+    <div class="uiContainer---wrapper col 12" id="newDeliveryForm"></div> 
+</div>
+    
 
 <footer class="footer" id="footerDiv">
         <div id="displayMoment"></div>
