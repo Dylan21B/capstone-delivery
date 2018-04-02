@@ -27,8 +27,10 @@ $(document).on("click", ".big-btn", function() {
     let currentDelivery = $(this).data("big-id");
     db.getDelivery(currentDelivery)
     .then((deliveryId) => {
-        console.log("2 here is a single delivery", deliveryId);
-        loadDeliveriesDetails(deliveryId);
+        console.log("2 here is a single delivery", deliveryId, currentDelivery);
+        // templates.makeDeliveryBig(deliveryId);
+        // console.log("delivery is rendered", deliveryId);
+        loadDeliveriesDetails(currentDelivery);
     });
 });
 

@@ -53,11 +53,11 @@ function makeDelivery(deliveryList) {
     for (let delivery in deliveryList) {
         let currentDelivery = deliveryList[delivery],
         deliveryListItem = $("<ul>", {class: "delivery-list__item"}),
-        customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
+        customer = $("<nav/>", {class: "customer-name", id: "cardNav"}).text(currentDelivery.customer),
         deliveryListData = $("<ul/>", {class: "delivery-list__item--data"}),
         deliveryListEdit = $("<a>", {"data-edit-id": delivery, class: "edit-btn btn-light btn-sm", text: "Edit"}),
-        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn btn-outline-dark btn-sm", text: "Delete" }),
-        deliveryListBig = $("<a>", {"data-big-id": delivery, class: "big-btn btn-info btn-sm", text: "Info" });
+        deliveryListDelete = $("<a>", {"data-delete-id": delivery, class: "delete-btn btn-secondary btn-sm", text: "Delete" }),
+        deliveryListBig = $("<a>", {"data-big-id": delivery, class: "big-btn btn-secondary btn-sm", text: "Info" });
 
     deliveryListData.append(
         `<li>${currentDelivery.date}</li>
