@@ -79,7 +79,7 @@ function makeDeliverySmall(deliveries) {
     $(".uiContainer----wrapper").html($deliveryDisplay);
     for (let delivery in deliveries) {
         let currentDelivery = deliveries[delivery],
-        deliveryListItem = $("<ul>", {class: "delivery1-list__item"}),
+        deliveryListItem = $("<ul>", {class: "todayDelivery1-list__item"}),
         customer = $("<span/>", {class: "customer-name"}).text(currentDelivery.customer),
         deliveryListData = $("<ul/>", {class: "delivery-list__item--data"}),
         deliveryListBig = $("<a>", {"data-big-id": delivery, class: "big-btn btn-info btn-sm", text: "Info" });
@@ -108,7 +108,8 @@ function deliveryForm(delivery, deliveryId) {
           btnId: delivery ? "save_edit_btn" : "save_new_btn"
         },
         form = 
-        `<h3>${deliveryItem.formTitle}<h3>
+        `<div id="newFormJump">
+        <h3>${deliveryItem.formTitle}<h3>
         <div class="form-group col-lg-6" id="formLeft">
         <input type="text" class="form-control" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input><br>
         <input type="text" class="form-control" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input><br>
@@ -117,8 +118,8 @@ function deliveryForm(delivery, deliveryId) {
         <input type="date" class="form-control" id="form--date" placeholder="date" value="${deliveryItem.date}"></input><br>
         <input type="text" class="form-control" id="form--time" placeholder="time" value="${deliveryItem.time}"></input></div>
         <div class="form-group col-lg-6" id="formRight">
-        <input id="form--items" class="form-control" placeholder="items" value="${deliveryItem.items}"></input><br>
-        <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button></div>`;
+        <input type="text" id="form--items" class="form-control" placeholder="items" value="${deliveryItem.items}"></input><br>
+        <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button></div></div>`;
         resolve(form);
     });
 }

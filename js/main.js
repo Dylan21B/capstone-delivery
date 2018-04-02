@@ -18,7 +18,6 @@ function loadDeliveriesToDOM() {
     .then((deliveryData) => {
       console.log("here are the deliveries", deliveryData);
       templates.makeDelivery(deliveryData);
-      templates.makeDeliverySmall(deliveryData);
     });
 }
 
@@ -35,9 +34,9 @@ $(document).on("click", ".big-btn", function() {
 
 /// Using firebase // Loads list number 3 the big one
 function loadDeliveriesDetails(deliveryId) {
-    console.log("3 get the big deliveries", deliveryId)
-    // let currentUser = login.getUser();
-    // db.getDelivery(currentUser)
+    console.log("3 get the big deliveries", deliveryId);
+    let currentUser = login.getUser();
+    db.getDelivery(currentUser)
     .then((deliveryId) => {
         console.log("4 big delivery", deliveryId);
         templates.makeDeliveryBig(deliveryId);
@@ -111,6 +110,30 @@ $("#add-delivery").click(function() {
     var documentForm = templates.deliveryForm()
     .then(function(deliveryForm) {
         $(".uiContainer---wrapper").html(deliveryForm);
+        // $(document).ready(function(){
+        //     // Add smooth scrolling to all links
+        //     $("a").on('click', function(event) {
+          
+        //       // Make sure this.hash has a value before overriding default behavior
+        //       if (this.hash !== "") {
+        //         // Prevent default anchor click behavior
+        //         event.preventDefault();
+          
+        //         // Store hash
+        //         var hash = this.hash;
+          
+        //         // Using jQuery's animate() method to add smooth page scroll
+        //         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        //         $('html, body').animate({
+        //           scrollTop: $(hash).offset().top
+        //         }, 800, function(){
+             
+        //           // Add hash (#) to URL when done scrolling (default click behavior)
+        //           window.location.hash = hash;
+        //         });
+        //       } // End if
+        //     });
+        //   });
     });
 });
 
