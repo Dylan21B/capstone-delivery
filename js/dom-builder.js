@@ -21,18 +21,20 @@ function makeDeliveryBig(deliveryList, id) {
     // for (let delivery in deliveryList) {
     //     let currentDelivery = deliveryList[delivery],
     let deliveryListItem = $("<ul>", {class: "delivery--list__item"}),
-        customer = $("<span/>", {class: "customer-name"}).text(deliveryList.customer),
+        customer = $("<h1/>","Customer:", {class: "customer-name"}).text(deliveryList.customer),
         deliveryListData = $("<ul/>", {class: "delivery--list__item--data"}),
-        deliveryListEdit = $("<a>", {"data-edit-id": id, class: "edit--btn btn-light btn-sm", text: "Edit"}),
-        deliveryListDelete = $("<a>", {"data-delete-id": id, class: "delete--btn btn-outline-dark btn-sm", text: "Delete" });
+        deliveryListEdit = $("<a>", {"data-edit-id": id, class: "edit-btn btn-light btn-sm", text: "Edit"}),
+        deliveryListDelete = $("<a>", {"data-delete-id": id, class: "delete-btn btn-outline-dark btn-sm", text: "Delete" });
 
     deliveryListData.append(
-        `<li>${deliveryList.date}</li>
-        <li>${deliveryList.time}</li>
-        <li>${deliveryList.number}</li>
-        <li>${deliveryList.address}</li>
-        <li>${deliveryList.items}</li>
-        <li>${deliveryList.emInt}</li>`);
+        `<ul class="list-group list-group-flush" id="deliveryTable">
+        <li class="list-group-item">Date:  ${deliveryList.date}</li>
+        <li class="list-group-item">Time:  ${deliveryList.time}</li>
+        <li class="list-group-item">Phone:  ${deliveryList.number}</li>
+        <li class="list-group-item">Address:  ${deliveryList.address}</li>
+        <li class="list-group-item">Items:  ${deliveryList.items}</li>
+        <li class="list-group-item">Employee Initials:  ${deliveryList.emInt}</li>
+        </ul>`);
 
 
         //// location printed to
@@ -105,7 +107,7 @@ function deliveryForm(delivery, deliveryId) {
           time: delivery ? delivery.time : "",
           items: delivery ? delivery.items : "",
           formTitle: delivery ? `Edit "${delivery.customer}"` : "Add new delivery",
-          btnText: delivery ? "save changes" : "save delivery",
+          btnText: delivery ? "Save Changes" : "Save Delivery",
           btnId: delivery ? "save_edit_btn" : "save_new_btn"
         },
         form = 
@@ -113,13 +115,13 @@ function deliveryForm(delivery, deliveryId) {
         <h3>${deliveryItem.formTitle}<h3>
         <div class="form-group col-lg-6" id="formLeft">
         <input type="text" class="form-control" id="form--emInt" placeholder="Employee" value="${deliveryItem.emInt}"></input><br>
-        <input type="text" class="form-control" id="form--customer" placeholder="customer" value="${deliveryItem.customer}"></input><br>
-        <input type="text" class="form-control" id="form--number" placeholder="number" value="${deliveryItem.number}"></input><br>
-        <input type="text" class="form-control" id="form--address" placeholder="address" value="${deliveryItem.address}"></input><br>
-        <input type="date" class="form-control" id="form--date" placeholder="date" value="${deliveryItem.date}"></input><br>
-        <input type="text" class="form-control" id="form--time" placeholder="time" value="${deliveryItem.time}"></input></div>
+        <input type="text" class="form-control" id="form--customer" placeholder="Customer" value="${deliveryItem.customer}"></input><br>
+        <input type="text" class="form-control" id="form--number" placeholder="Number" value="${deliveryItem.number}"></input><br>
+        <input type="text" class="form-control" id="form--address" placeholder="Address" value="${deliveryItem.address}"></input><br>
+        <input type="date" class="form-control" id="form--date" placeholder="Date" value="${deliveryItem.date}"></input><br>
+        <input type="text" class="form-control" id="form--time" placeholder="Time" value="${deliveryItem.time}"></input></div>
         <div class="form-group col-lg-6" id="formRight">
-        <input type="text" id="form--items" class="form-control" placeholder="items" value="${deliveryItem.items}"></input><br>
+        <input type="text" id="form--items" class="form-control" placeholder="Items" value="${deliveryItem.items}"></input><br>
         <button id="${deliveryId}" class=${deliveryItem.btnId}>${deliveryItem.btnText}</button></div></div>`;
         resolve(form);
     });

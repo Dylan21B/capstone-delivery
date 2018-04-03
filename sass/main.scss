@@ -68,9 +68,9 @@ body{
 .delivery-list__item{
     background-color: $colorA;
     text-decoration-color: $colorD;
-    font-size: 1.2em;
+    font-size: 1.4em;
     border-radius: 10px;
-    max-width: 25%;
+    width: 30%;
     padding: 10px;
     margin: 10px;
     display: inline-block;
@@ -114,6 +114,9 @@ background-color: $colorD;
     -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
     box-shadow: 3px 3px 7px rgba(0,0,0,0.75);
+}
+#deliveryTable{
+    font-size: 1.7em;
 }
 .customer-name{
     text-align: center;
